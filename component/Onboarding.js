@@ -9,7 +9,7 @@ export default function Onboarding({navigation}) {
             <Text style={{fontSize:30,fontWeight:'bold',color:'white',width:250,textAlign:'center'}}>Coffee so good, your taste buds will love it.</Text>
             <Text style={{width:250,textAlign:'center',padding:20,color:'#ddded9'}}>The best grain, the finest roast, the powerful flavor.</Text>
             <TouchableOpacity style={{backgroundColor:'#C67C4E',paddingVertical:20,borderRadius:15,width:'100%'}}
-              onPress={()=>navigation.navigate('Home')}>
+              onPress={()=>navigation.navigate('Tabs')}>
               <Text style={{fontWeight:'bold',color:'white',textAlign:'center'}}>Get Started</Text>
             </TouchableOpacity>
           </View>

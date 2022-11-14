@@ -108,7 +108,7 @@ export default function HomeScreen({ navigation }) {
             renderItem={({ item }) => {
               return (
                 <View style={{ height: 250, width: 150, backgroundColor: 'white', margin: 15, borderRadius: 20 }}>
-                  <ImageBackground source={item.img} imageStyle={{ borderRadius: 20 }} style={{ height: 150, width: 150, }}>
+                  <ImageBackground source={{uri:item.img}} imageStyle={{ borderRadius: 20 }} style={{ height: 150, width: 150, }}>
                     <View style={{ flexDirection: 'row', padding: 5, alignItems: 'center' }}>
                       <Image source={require('../assets/star.png')} style={{ height: 15, width: 15 }} />
                       <Text style={{ marginLeft: 5, color: '#1e1e1e', fontWeight: 'bold' }}>{item.star}</Text>
