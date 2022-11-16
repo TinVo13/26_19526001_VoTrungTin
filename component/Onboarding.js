@@ -1,19 +1,26 @@
 import React from 'react'
-import { StyleSheet, View,Text, ImageBackground, TouchableOpacity } from 'react-native'
+import { StyleSheet, View,Text, ImageBackground, TouchableOpacity, Image } from 'react-native'
 
 export default function Onboarding({navigation}) {
   return (
     <View style={styles.container}>
-        <ImageBackground source={require('../assets/coffee_img.jpg')} style={styles.background}>
-          <View style={styles.textLogin}>
-            <Text style={{fontSize:30,fontWeight:'bold',color:'white',width:250,textAlign:'center'}}>Coffee so good, your taste buds will love it.</Text>
-            <Text style={{width:250,textAlign:'center',padding:20,color:'#ddded9'}}>The best grain, the finest roast, the powerful flavor.</Text>
-            <TouchableOpacity style={{backgroundColor:'#C67C4E',paddingVertical:20,borderRadius:15,width:'100%'}}
-              onPress={()=>navigation.navigate('Tabs')}>
-              <Text style={{fontWeight:'bold',color:'white',textAlign:'center'}}>Get Started</Text>
-            </TouchableOpacity>
-          </View>
+        <ImageBackground source={require('../assets/background.png')} style={styles.background} imageStyle={{borderRadius:20}}>
+          
         </ImageBackground>
+        <View style={styles.textLogin}>
+            <Text style={{fontSize:30,color:'#1a1a1a',width:250,textAlign:'center',marginTop:50}}>Welcome to <Text style={{color:'#1a1a1a',fontWeight:'bold'}}>Power Bike Shop</Text></Text>
+            <TouchableOpacity style={{backgroundColor:'grey',paddingVertical:20,borderRadius:15,width:320,flexDirection:'row',justifyContent:'center',alignItems:'center',marginTop:20}}
+              onPress={()=>navigation.navigate('Tabs')}>
+                <Image source={require('../assets/google.png')} style={{marginRight:10}}></Image>
+              <Text style={{fontWeight:'bold',color:'white',textAlign:'center'}}>Login with Gmail</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={{backgroundColor:'#1a1a1a',paddingVertical:20,borderRadius:15,width:320,flexDirection:'row',justifyContent:'center',alignItems:'center',marginTop:20}}
+              onPress={()=>navigation.navigate('Tabs')}>
+                <Image source={require('../assets/apple.png')} style={{tintColor:'white',marginRight:10}}></Image>
+              <Text style={{fontWeight:'bold',color:'white',textAlign:'center'}}>Login with Gmail</Text>
+            </TouchableOpacity>
+            <Text style={{marginTop:20}}>Not a member? <Text style={{color:'#fa6500'}}>Sign up</Text></Text>
+          </View>
     </View>
   )
 }
@@ -21,13 +28,15 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         flexDirection:'column',
-        backgroundColor:'black',
+        backgroundColor:'white',
+        alignItems:'center'
     },
     background:{
-      height:'100%',
-      width:'100%',
+      height:250,
+      width:250,
       flexDirection:'column',
-      justifyContent:'flex-end',
+      transform:[{rotate:'45deg'}],
+      marginTop:120,
     },
     textLogin:{
       padding:20,
